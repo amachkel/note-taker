@@ -1,6 +1,6 @@
 const notes = require('express').Router();
 const { readFromFile, readAndAppend } = require('../helpers/fsUtils');
-const uuid = require('uuid');
+const { v4: uuidv4 } = require('uuid');
 // GET /api/notes should read the db.json file and return all saved notes as JSON.
 
 // GET Route for retrieving all notes
@@ -11,7 +11,7 @@ notes.get('/', (req, res) => {
   });
 
 // POST Route for adding notes
-notes.post('/api/notes', (req, res) => {
+notes.post('/', (req, res) => {
     // Log that a POST request was received
     console.info(`${req.method} request received to add note`);
   
@@ -24,7 +24,7 @@ notes.post('/api/notes', (req, res) => {
       const newNote = {
         title,
         text,
-        feedback_id: uuid(),
+        feedback_id: uuidv4(),
       };
   
       readAndAppend(newNote, './db/db.json');
