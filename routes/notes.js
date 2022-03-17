@@ -1,16 +1,7 @@
 const notes = require("express").Router();
-const Joi = require("joi");
 const { readFromFile, readAndAppend, writeToFile } = require("../helpers/fsUtils");
 const { v4: uuidv4 } = require("uuid");
 
-// function validateNote(note) {
-//   const schema = {
-//     name: Joi.string().min(3).required(),
-//   };
-//   return Joi.validate(note, schema);
-// }
-// GET /api/notes should read the db.json file and return all saved notes as JSON.
-// GET Route for retrieving all notes
 notes.get("/notes", (req, res) => {
   console.info(`${req.method} request received for notes`);
   // read file from this file path, then parse response?
@@ -54,7 +45,7 @@ notes.delete("/notes/:id", (req, res) => {
     console.log(notes)
     const note = notes.find((c) => c.feedback_id === req.params.id);
     //filters out id
-    if (!note) return res.status(404).send("Note with given id note found");
+    if (!note) return res.status(404).send("Note with given id not found");
     // delete
     const index = notes.indexOf(note);
     console.log(index)
