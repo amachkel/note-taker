@@ -3,20 +3,16 @@ This application uses Express.js to save and retrieve note data from a JSON file
 
 ## Table Of Contents 
  - [description](#note-taker)
- - [installation](#installation-requirements)
  - [usage](#usage)
  - [contributors](#contributors)
  - [license](#license)
  - [tests](#tests)
 
-## Installation Requirements
-  npm, Express.js
-
  ## Usage
   The note taker is a full stack application that can take user input from the browser and add it to a JSON file meant to immulate a database. The note is saved and visible on the page and can be deleted via the delete icon.
  
  Check it out 👉
-  [Note Taker](https://dashboard.heroku.com/apps/note-taker-admkh)
+  [Note Taker](https://note-taker-admkh.herokuapp.com/)
   
   ![11-express-homework-demo-01](https://user-images.githubusercontent.com/84882398/159016560-a586e0a1-7a3c-42a2-b09d-c5dc0e9940fd.png)
 
